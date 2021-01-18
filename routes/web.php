@@ -18,7 +18,9 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('/mapaPreHubarov', [App\Http\Controllers\HomeController::class, 'mapaPreHubarov'])->name('mapaPreHubarov');
+Route::get('/galeria', [App\Http\Controllers\HomeController::class, 'galeria'])->name('galeria');
+Route::get('/welcome', [App\Http\Controllers\HomeController::class, 'welcome'])->name('welcome');
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => ['auth']], function () {
     Route::resource('user', UserController::class);

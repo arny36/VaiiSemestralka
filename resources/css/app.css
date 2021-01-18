@@ -1,0 +1,43 @@
+body {
+
+    background: url('https://i.pinimg.com/originals/38/ba/82/38ba82aceb169bc057bc1a624488ed35.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.tvInfo {
+    position: relative;
+    font-weight: bold;
+    font-size: 1vw;
+    color: aliceblue;
+    box-sizing: border-box;
+    width: 50%;
+    text-align: center;
+    transform: translate(50%,0%);
+
+}
+.nazvy-stranok  {
+
+    font-size: large;
+    font-weight: bold ;
+
+}
+
+h5 {
+    color: saddlebrown;
+    font-size: large;
+    font-weight: bold;
+}
+
+p {
+
+    color: darkgreen;
+
+}
+
+a.bocny-obrazok  img {
+    width: 50px;
+    height: 50px;
+}

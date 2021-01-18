@@ -25,4 +25,18 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function welcome()
+    {
+        return view('welcome');
+    }
+    public function galeria()
+    {
+        return view('galeria');
+    }
+
+    public function mapaPreHubarov()
+    {
+        return view('mapaPreHubarov');
+    }
 }
