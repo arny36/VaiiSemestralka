@@ -3,79 +3,77 @@
 @section('content')
 
 
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<!--
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+</head>
 
-                    {{ __('You are logged in!') }}
-                </div>
-            </div>
-        </div>
+
+<body>
+
+
+<div class="slideshow-container">
+
+    <div class="mySlides fade">
+        <div class="numbertext">1 / 3</div>
+        <img src="{{url('images/les.jpg')}}" style="width:100%">
+        <div class="text">Najkrajšie zážitky zo slovenských lesov</div>
     </div>
-</div>
 
+    <div class="mySlides fade">
+        <div class="numbertext">2 / 3</div>
+        <img src="{{url('images/2hubari.jpg')}}" style="width:100%">
+        <div class="text">Spoznavanie nových ľudí!</div>
+    </div>
 
--->
-
-
-
-
-
-
-<body class="antialiased">
-
-
-
-
-<div class="constainer">
-    <div class="row">
-        <div class="col-lg-6"></div>
-        <div class="text-onas" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">O nás</h5>
-                <p class="card-text">Sme malá skupinka hubárov, ktorá sa rada podelí o svoje zážitky a skúsenosti s hubarením.</p>
-                <p>Na stránke sa dozviete veľa zaujimavých vecí ohľadom húb, ich konzumácie a zbierania.</p>
-            </div>
-        </div>
-        <div class="slide-obrazky"  style="max-width:500px">
-            <img class="mySlides" src="{{url('images/les.jpg')}}" style="width:100%">
-
-            <img class="mySlides" src="{{url('images/2hubari.jpg')}}" style="width:100%">
-            <img class="mySlides" src="{{url('images/suchohribHlavnaPlocha.jpg')}}" style="width:100%">
-        </div>
+    <div class="mySlides fade">
+        <div class="numbertext">3 / 3</div>
+        <img src="{{url('images/suchohribHlavnaPlocha.jpg')}}" style="width:100%">
+        <div class="text">Najviac vychytané zábery!</div>
     </div>
 
 </div>
+<br>
+
+<div style="text-align:center">
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
 </div>
 
 <script>
-    var cisloObrazka = 0;
-    generovanie();
+    var slideIndex = 0;
+    showSlides();
 
-    function generovanie() {
+    function showSlides() {
         var i;
-        var obrazky = document.getElementsByClassName("mySlides");
-        for (i = 0; i < obrazky.length; i++) {
-            obrazky[i].style.display = "none";
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
         }
-        cisloObrazka++;
-        if (cisloObrazka > obrazky.length) {cisloObrazka = 1}
-        obrazky[cisloObrazka-1].style.display = "block";
-        setTimeout(generovanie, 1500); // nastavene na 1,5 sekundy
+        slideIndex++;
+        if (slideIndex > slides.length) {slideIndex = 1}
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex-1].style.display = "block";
+        dots[slideIndex-1].className += " active";
+        setTimeout(showSlides, 2000); // Change image every 2 seconds
     }
 </script>
 
 </body>
 </html>
+
+
+
+
+
+
+
 @endsection
